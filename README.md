@@ -20,5 +20,9 @@
 ```
 - model_test.py
 ```bash
-加载模型和测试集进行测试
+加载模型和测试集进行测试,如下设置好模型和测试集的路径:
+```
+```python
+model_path = '/home/fxf/resnet152/saved_Rest152_v2_model'
+TestTFPath = '/home/fxf/TestDataset_generate/czrk/czrk_pair_test.tfrecord'
 ```
