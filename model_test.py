@@ -8,6 +8,7 @@ import numpy as np
 import tqdm
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+model_path = '/home/fxf/resnet152/saved_Rest152_v2_model'
 TestTFPath = '/home/fxf/TestDataset_generate/czrk/czrk_pair_test.tfrecord'
 # TestTFPath = '/home/fxf/TestDataset_generate/glass_mask/glass_mask_pairs.tfrecord'
 batch_size = 32
@@ -41,7 +42,7 @@ train_dataset = load_tfrecord_dataset(TestTFPath, input_shape)
 train_dataset = train_dataset.batch(batch_size)
 train_dataset = train_dataset.prefetch(buffer_size=-1)
 
-model = tf.keras.models.load_model('/home/fxf/resnet152/saved_Rest152_v2_model')
+model = tf.keras.models.load_model(model_path)
 print("load model successfully!")
 
 distances = []
